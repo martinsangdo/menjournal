@@ -1,4 +1,4 @@
-package com.menjournal;
+package com.xufagroup.menjournal;
 
 import com.facebook.react.ReactActivity;
 
