@@ -37,7 +37,7 @@ class Splash extends BaseScreen {
 					);
 				} else {
 					//online
-					this._navigateTo('Home');
+					this._navigateTo('Drawer');
 				}
 			});
 		}
