@@ -8,42 +8,32 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import { Root } from "native-base";
+import { StackNavigator } from "react-navigation";
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+//declare routes folder
+import Drawer from "./js/screen/Drawer";
+import Splash from "./js/screen/splash";
+import Home from "./js/screen/home";
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
-  }
-}
+//declare screens in app
+const AppNavigator = StackNavigator(
+    {
+        Drawer: { screen: Drawer },   //menu
+        Splash: { screen: Splash },
+        Home: { screen: Home },
+      },
+    {
+        initialRouteName: "Splash",   //open this page first time
+        headerMode: "none",
+        cardStyle: {
+          paddingTop: Platform.OS === 'ios' ? 20 : 0,
+          backgroundColor: '#fff'
+        }
+    }
+  );
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+  export default () =>
+      <Root>
+          <AppNavigator />
+      </Root>;

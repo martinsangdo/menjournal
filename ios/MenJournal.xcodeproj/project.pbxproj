@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -54,6 +53,7 @@
 		C5D69134D48A4C72A6DCBF16 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08989BABA97B42C9813CA2A8 /* SimpleLineIcons.ttf */; };
 		D23A4ABFBC554FC7AD092A05 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1D211B4D04F417A8EB7E3CC /* Octicons.ttf */; };
 		F350A2B5062445538A848FA6 /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E3DEAA2C79A482C80229028 /* Roboto_medium.ttf */; };
+		FFE4F7B74D0B45BF85EE8B44 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D307A1879AE490B8559750F /* MaterialCommunityIcons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -391,6 +391,7 @@
 		F7EEA7D1A71344B1A0FA5D40 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		FD3657FD20DA4FB89D96E5C7 /* libRNExitApp.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNExitApp.a; sourceTree = "<group>"; };
 		FD3D534739F44F759C07FF9F /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
+		4D307A1879AE490B8559750F /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; name = "MaterialCommunityIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -583,6 +584,7 @@
 				08989BABA97B42C9813CA2A8 /* SimpleLineIcons.ttf */,
 				BD4E9E1156294B0891A8F1EE /* Zocial.ttf */,
 				39BE54054D4F42DABAC60C85 /* Feather.ttf */,
+				4D307A1879AE490B8559750F /* MaterialCommunityIcons.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1186,6 +1188,7 @@
 				C5D69134D48A4C72A6DCBF16 /* SimpleLineIcons.ttf in Resources */,
 				79FBF463D03C455992371F77 /* Zocial.ttf in Resources */,
 				B0D30ED0B6D74187B0516B8C /* Feather.ttf in Resources */,
+				FFE4F7B74D0B45BF85EE8B44 /* MaterialCommunityIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
