@@ -15,6 +15,7 @@ import { StackNavigator } from "react-navigation";
 import Drawer from "./js/screen/Drawer";
 import Splash from "./js/screen/splash";
 import Home from "./js/screen/home";
+import Detail from "./js/screen/home/detail";
 
 //declare screens in app
 const AppNavigator = StackNavigator(
@@ -22,6 +23,7 @@ const AppNavigator = StackNavigator(
         Drawer: { screen: Drawer },   //menu
         Splash: { screen: Splash },
         Home: { screen: Home },
+        Detail: { screen: Detail },
       },
     {
         initialRouteName: "Splash",   //open this page first time

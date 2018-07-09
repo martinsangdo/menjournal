@@ -69,10 +69,7 @@ export const C_Const = {
 		FIREBASE_TOKEN: 'FIREBASE_TOKEN',
 		USER_ID: 'user_id',
 		EMAIL: 'email',
-		COIN_LIST: 'COIN_LIST'
 	},
 	ACTIVE_COLOR: '#008da9',
 	ICON_URL: 'https://blockbod.com/public/blockbod/img/logo.jpeg',	//empty image in News
-	TERM_URL: 'https://www.coinbase.com/about',
-	PRIVACY_URL: 'https://www.coinbase.com/about'
 };
