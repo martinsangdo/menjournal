@@ -31,47 +31,54 @@ class SideBar extends Component {
 			shadowRadius: 4,
 			datas: [
 				{name: "My Bookmarks", cateogry: "my_bookmark"},
-				{name: "Gear", cateogry: "gear"},
-				{name: "Health & Fitness", cateogry: "gear"},
-				{name: "Adventure", cateogry: "gear"},
-				{name: "Food & Drink", cateogry: "gear"},
-				{name: "Style", cateogry: "gear"},
-				{name: "Travel", cateogry: "gear"},
-				{name: "Public Lands", cateogry: "gear"},
-				{name: "Features", cateogry: "gear"},
-				{name: "Whiskey", cateogry: "gear"},
-				{name: "Watches", cateogry: "gear"},
-				{name: "Cars", cateogry: "gear"},
-				{name: "Recipes", cateogry: "gear"},
-				{name: "Life Advice", cateogry: "gear"},
-				{name: "Fatherhood", cateogry: "gear"},
-				{name: "Record Book", cateogry: "gear"},
-				{name: "Subscriber Service", cateogry: "gear"},
-				{name: "Sports", cateogry: "gear"},
-				{name: "Beer", cateogry: "gear"},
-				{name: "Workouts", cateogry: "gear"},
-				{name: "Weight Loss", cateogry: "gear"},
-				{name: "Grooming", cateogry: "gear"},
-				{name: "Nutrition", cateogry: "gear"},
-				{name: "Gift Ideas", cateogry: "gear"},
-				{name: "Subscribe", cateogry: "gear"},
-				{name: "Give a Gift", cateogry: "gear"},
-				{name: "Accessibility Statement", cateogry: "gear"}
+				// {name: "Gear", cateogry: "gear"},
+				// {name: "Health & Fitness", cateogry: "gear"},
+				// {name: "Adventure", cateogry: "gear"},
+				// {name: "Food & Drink", cateogry: "gear"},
+				// {name: "Style", cateogry: "gear"},
+				// {name: "Travel", cateogry: "gear"},
+				// {name: "Public Lands", cateogry: "gear"},
+				// {name: "Features", cateogry: "gear"},
+				// {name: "Whiskey", cateogry: "gear"},
+				// {name: "Watches", cateogry: "gear"},
+				// {name: "Cars", cateogry: "gear"},
+				// {name: "Recipes", cateogry: "gear"},
+				// {name: "Life Advice", cateogry: "gear"},
+				// {name: "Fatherhood", cateogry: "gear"},
+				// {name: "Record Book", cateogry: "gear"},
+				// {name: "Subscriber Service", cateogry: "gear"},
+				// {name: "Sports", cateogry: "gear"},
+				// {name: "Beer", cateogry: "gear"},
+				// {name: "Workouts", cateogry: "gear"},
+				// {name: "Weight Loss", cateogry: "gear"},
+				// {name: "Grooming", cateogry: "gear"},
+				// {name: "Nutrition", cateogry: "gear"},
+				// {name: "Gift Ideas", cateogry: "gear"},
+				// {name: "Subscribe", cateogry: "gear"},
+				// {name: "Give a Gift", cateogry: "gear"},
+				// {name: "Accessibility Statement", cateogry: "gear"}
+				{name: "NAKED DIET", cateogry: "gear"},
+				{name: "NAKED KITCHEN", cateogry: "gear"},
+				{name: "NAKED FOOD", cateogry: "gear"},
+				{name: "NAKED LIFESTYLE", cateogry: "gear"},
+				{name: "NAKED TEES", cateogry: "gear"},
+				{name: "GUIDE", cateogry: "gear"},
+				{name: "EVENT", cateogry: "gear"},
 			]
 		};
 	}
 	//
 	componentDidMount() {		//window.onload
-		
+
 	}
 	//
 	_open_page(category) {		//window.onload
 		if (category == 'my_bookmark'){
-			this.props.navigation.navigate('Bookmark');
+			// this.props.navigation.navigate('Bookmark');
 		} else {
-			this.props.navigation.navigate('Category', {
-				category: category
-			});
+			// this.props.navigation.navigate('Category', {
+			// 	category: category
+			// });
 		}
 	}
 	//============================== UI ==============================

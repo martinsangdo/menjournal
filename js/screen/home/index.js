@@ -85,6 +85,7 @@ class Home extends Component {
                     title: Utils.decodeHtml(list[i]['title']['rendered']),
                     img_src: C_Const.ICON_URL,
 										link: list[i]['link'],
+                    excerpt: list[i]['excerpt']['rendered'],
                     content: list[i]['content']['rendered']
                 });
                 me.state.key_list[list[i]['id']] = true;

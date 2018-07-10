@@ -29,5 +29,6 @@ export default {
 		width: deviceWidth - 120, height: Platform.OS==='ios'?35:40, backgroundColor: '#eee',
 		justifyContent: 'center', marginTop: 2, borderRadius:6, borderColor:'#eee'
 	},
-	search_cancel: {width:100, justifyContent: 'center'}
+	search_cancel: {width:100, justifyContent: 'center'},
+	main_scroll: {}
 };

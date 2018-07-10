@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {View, TouchableOpacity, Share, Dimensions, Platform, WebView} from "react-native";
+import {View, TouchableOpacity, Share, Dimensions, Platform, WebView, ScrollView} from "react-native";
 
 import {Container, Content, Button, Text, Header, Body, Left, Right, Icon} from "native-base";
 
@@ -16,6 +16,18 @@ import RequestData from '../../utils/https/RequestData';
 import {API_URI} from '../../utils/api_uri';
 import Spinner from 'react-native-loading-spinner-overlay';
 import {setting} from "../../utils/config";
+import HTML from 'react-native-render-html';
+
+const customStyles = {
+	'yrecipe-print-link': { width: 0, height:0 },
+	'yummly-button':{ width: 0, height:0 },
+	'strong': {fontSize:20, fontWeight:'bold'},
+	'instruction': {paddingTop:10},
+};
+
+const customTags = {
+	'iframe': {maxWidth:Dimensions.get('window').width, maxHeight:300}
+};
 
 class Detail extends BaseScreen {
 		constructor(props) {
@@ -23,6 +35,7 @@ class Detail extends BaseScreen {
 			this.state = {
 				title: '',
 				content: '',
+				excerpt: '',
 				link: '',
 				is_bookmarked: false,
 				loading_indicator_state: false
@@ -30,14 +43,15 @@ class Detail extends BaseScreen {
 		}
 		//
 		componentDidMount() {
-      // var content = this.props.navigation.state.params.detail.content;
-      // content = content.replace('\r\n', '<br/>').replace('\n', '<br/>').replace('\r', '<br/>');
-			// this.setState({
-			// 	link: this.props.navigation.state.params.detail.link,
-			// 	title: this.props.navigation.state.params.detail.title,
-      //   content: content
-			// });
-			
+      var content = this.props.navigation.state.params.detail.content;
+      content = content.replace('\r\n', '<br/><br/>').replace('\n', '<br/><br/>').replace('\r', '<br/><br/>');
+			Utils.dlog(content);
+			this.setState({
+				link: this.props.navigation.state.params.detail.link,
+				title: this.props.navigation.state.params.detail.title,
+				excerpt: this.props.navigation.state.params.detail.excerpt,
+        content: content
+			});
 		}
 		//
 		_on_go_back = () => {
@@ -103,18 +117,12 @@ class Detail extends BaseScreen {
 							<Content>
 								<Spinner visible={this.state.loading_indicator_state} textStyle={common_styles.whiteColor} />
 								{/* fake webview to auto calculate height */}
-								<View style={[common_styles.padding_20]}>
-									<Text style={[common_styles.bold, {fontSize:18}]}>{this.state.title}</Text>
-								</View>
-
-								<View style={{backgroundColor:'#f00', width:500, height:500}}>
-								<AutoHTML
-										scalesPageToFit={Platform.OS === 'android' ? true : false}
-										autoHeight={true}
-										style={{ width: 600, height:200, backgroundColor:'#f0f'}}
-										source={{baseUrl: '', html: 'abc'}}
-										customStyle={'img.alignnone.size-full {max-width:100%;height:auto;} body {font-family:arial;} p,span,a {font-size:13.5pt !important;}'} />
-
+								<View style={[common_styles.padding_20, {paddingTop:0}]}>
+									<ScrollView style={styles.main_scroll}>
+		                <HTML html={this.state.content} imagesMaxWidth={Dimensions.get('window').width}
+											classesStyles={customStyles} tagsStyles={customTags}
+										/>
+		            	</ScrollView>
 								</View>
 							</Content>
 						</Container>
