@@ -8,7 +8,6 @@ import common_styles from "../../../css/common";
 import styles from "./style";    //CSS defined here
 import Utils from "../../utils/functions";
 import {C_Const} from '../../utils/constant';
-import AutoHTML from 'react-native-autoheight-webview';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
@@ -45,7 +44,7 @@ class Detail extends BaseScreen {
 		componentDidMount() {
       var content = this.props.navigation.state.params.detail.content;
       content = content.replace('\r\n', '<br/><br/>').replace('\n', '<br/><br/>').replace('\r', '<br/><br/>');
-			Utils.dlog(content);
+			// Utils.dlog(content);
 			this.setState({
 				link: this.props.navigation.state.params.detail.link,
 				title: this.props.navigation.state.params.detail.title,

@@ -2,7 +2,6 @@ package com.xufagroup.menjournal;
 
 import android.app.Application;
 
-import com.dscj.autoheightwebview.AutoHeightWebViewPackage;
 import com.facebook.react.ReactApplication;
 import com.github.wumke.RNExitApp.RNExitAppPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -27,7 +26,6 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new RNExitAppPackage(),
-            new AutoHeightWebViewPackage(),
             new VectorIconsPackage()
       );
     }

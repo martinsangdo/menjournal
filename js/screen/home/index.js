@@ -77,7 +77,7 @@ class Home extends Component {
 				RequestData.sentGetRequest(url,
 					(list, error) => {
 					if (list != null){
-            Utils.dlog(list);
+            // Utils.dlog(list);
 						var me = this;
 						var len = list.length;
             for (var i=0; i<len; i++){
