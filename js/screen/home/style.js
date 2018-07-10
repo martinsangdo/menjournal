@@ -19,5 +19,15 @@ export default {
 	text_label: {marginLeft: 10, width: deviceWidth - 140, marginRight:10},
   thumb: {width: 80, height: 80},
   forward_ico: {width: 20, justifyContent: 'center'},
-  time_label: {fontSize:12, color: '#777'}
+  time_label: {fontSize:12, color: '#777'},
+	webview: {
+		flex:1, width:'100%', minWidth:deviceWidth,
+		minHeight:deviceHeight-80, //why 80???
+		height:'100%'
+	},
+	search_bar: {
+		width: deviceWidth - 120, height: Platform.OS==='ios'?35:40, backgroundColor: '#eee',
+		justifyContent: 'center', marginTop: 2, borderRadius:6, borderColor:'#eee'
+	},
+	search_cancel: {width:100, justifyContent: 'center'}
 };

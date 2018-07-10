@@ -38,7 +38,6 @@ class Home extends Component {
 				is_getting_data: true,
 				loading_indicator_state: false,
 				isShowMore: false,
-				jwt: '',
 				key_list: {}		//to make sure there is no duplicate item in list
 			};
 	}
@@ -61,11 +60,8 @@ class Home extends Component {
             <Image style={styles.thumb} source={{uri: Utils.isEmpty(item.img_src)?null:item.img_src}}/>
           </View>
           <View style={styles.text_label}>
-            <Text numberOfLines={3}>{item.title}</Text>
+            <Text numberOfLines={3} style={common_styles.bold}>{item.title}</Text>
           </View>
-					<View style={styles.forward_ico}>
-						<Icon name="ios-arrow-forward-outline" style={common_styles.darkGrayColor}/>
-					</View>
         </View>
       </TouchableOpacity>
 		);
@@ -77,7 +73,7 @@ class Home extends Component {
 				RequestData.sentGetRequest(url,
 					(list, error) => {
 					if (list != null){
-            // Utils.dlog(list);
+            Utils.dlog(list);
 						var me = this;
 						var len = list.length;
             for (var i=0; i<len; i++){
@@ -102,7 +98,7 @@ class Home extends Component {
 							this.setState({isShowMore: true, loading_indicator_state: false});  //maybe have more
 						}
 					} else {
-							// Utils.xlog('error', error);
+							Utils.xlog('error', error);
 							this.setState({isShowMore: false, loading_indicator_state: false});
 					}
 					this.setState({is_getting_data: false, loading_indicator_state: false});
@@ -141,6 +137,10 @@ class Home extends Component {
 				});
 			}
 		};
+    //
+    _open_search = () => {
+
+    };
   //============================== UI ==============================
   render() {
     return (
@@ -161,6 +161,10 @@ class Home extends Component {
             <Button
               transparent onPress={this._open_subscribe}>
               <Icon name="ios-mail-outline" style={styles.home_icon}/>
+            </Button>
+            <Button
+              transparent onPress={this._open_search}>
+              <Icon name="search" style={styles.home_icon}/>
             </Button>
           </Right>
         </Header>

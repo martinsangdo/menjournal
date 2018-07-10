@@ -16,6 +16,7 @@ import Drawer from "./js/screen/Drawer";
 import Splash from "./js/screen/splash";
 import Home from "./js/screen/home";
 import Detail from "./js/screen/home/detail";
+import Search from "./js/screen/home/search";
 
 //declare screens in app
 const AppNavigator = StackNavigator(
@@ -24,6 +25,7 @@ const AppNavigator = StackNavigator(
         Splash: { screen: Splash },
         Home: { screen: Home },
         Detail: { screen: Detail },
+        Search: { screen: Search }
       },
     {
         initialRouteName: "Splash",   //open this page first time

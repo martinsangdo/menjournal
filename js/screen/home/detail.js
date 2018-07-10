@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {View, TouchableOpacity, Share, Dimensions, Platform} from "react-native";
+import {View, TouchableOpacity, Share, Dimensions, Platform, WebView} from "react-native";
 
 import {Container, Content, Button, Text, Header, Body, Left, Right, Icon} from "native-base";
 
@@ -30,13 +30,14 @@ class Detail extends BaseScreen {
 		}
 		//
 		componentDidMount() {
-      var content = this.props.navigation.state.params.detail.content;
-      content = content.replace('\r\n', '<br/>').replace('\n', '<br/>').replace('\r', '<br/>');
-			this.setState({
-				link: this.props.navigation.state.params.detail.link,
-				title: this.props.navigation.state.params.detail.title,
-        content: content
-			});
+      // var content = this.props.navigation.state.params.detail.content;
+      // content = content.replace('\r\n', '<br/>').replace('\n', '<br/>').replace('\r', '<br/>');
+			// this.setState({
+			// 	link: this.props.navigation.state.params.detail.link,
+			// 	title: this.props.navigation.state.params.detail.title,
+      //   content: content
+			// });
+			
 		}
 		//
 		_on_go_back = () => {
@@ -102,22 +103,18 @@ class Detail extends BaseScreen {
 							<Content>
 								<Spinner visible={this.state.loading_indicator_state} textStyle={common_styles.whiteColor} />
 								{/* fake webview to auto calculate height */}
-								<View>
-										<AutoHTML
-											autoHeight={true}
-											scalesPageToFit={true}
-											source={{html:''}} />
-								</View>
 								<View style={[common_styles.padding_20]}>
 									<Text style={[common_styles.bold, {fontSize:18}]}>{this.state.title}</Text>
 								</View>
-								<View style={{margin:10}}>
-									<AutoHTML
+
+								<View style={{backgroundColor:'#f00', width:500, height:500}}>
+								<AutoHTML
 										scalesPageToFit={Platform.OS === 'android' ? true : false}
 										autoHeight={true}
-										style={{ width: Dimensions.get('window').width - 10 }}
-										source={{baseUrl: '', html: this.state.content}}
-										customStyle={'img {max-width:100%;height:auto;} body {font-family:arial;} p,span,a {font-size:13.5pt !important;}'} />
+										style={{ width: 600, height:200, backgroundColor:'#f0f'}}
+										source={{baseUrl: '', html: 'abc'}}
+										customStyle={'img.alignnone.size-full {max-width:100%;height:auto;} body {font-family:arial;} p,span,a {font-size:13.5pt !important;}'} />
+
 								</View>
 							</Content>
 						</Container>

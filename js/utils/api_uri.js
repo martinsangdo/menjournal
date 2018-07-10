@@ -18,6 +18,7 @@ export const API_URI = {
 		//Splash
 		//News
 		GET_NEWS_LIST: setting.NEWS_IP + 'posts?per_page=20',
+		SEARCH_ARTICLE: setting.NEWS_IP + 'posts?per_page=20&keyword=',
 		GET_MEDIA_LIST: 'media',
 
 };
