@@ -72,5 +72,5 @@ export const C_Const = {
 		EMAIL: 'email',
 	},
 	ACTIVE_COLOR: '#008da9',
-	ICON_URL: 'https://blockbod.com/public/blockbod/img/logo.jpeg',	//empty image in News
+	ICON_URL: 'http://nakedfoodmagazine.com/wp-content/uploads/2017/07/NFM_LOGO-2017.jpg',	//empty image in News
 };

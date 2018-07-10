@@ -16,6 +16,6 @@ export default {
     height: '80%'
   },
   logo: {
-    width: 400, height: 400
+    width: 300, height: 117
   }
 };

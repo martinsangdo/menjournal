@@ -18,7 +18,7 @@ import {
   Badge,
   Grid,Col,Row,Text
 } from "native-base";
-import { Image, View, TouchableOpacity, FlatList } from "react-native";
+import { Image, ImageBackground, View, TouchableOpacity, FlatList } from "react-native";
 import { NavigationActions } from "react-navigation";
 import Spinner from 'react-native-loading-spinner-overlay';
 import RequestData from '../../utils/https/RequestData';
@@ -54,15 +54,19 @@ class Home extends Component {
 		_keyExtractor = (item) => item.id.toString();
 		//render the list. MUST use "item" as param
 		_renderItem = ({item}) => (
-      <TouchableOpacity onPress={() => this._open_detail(item.index)}>
-        <View style={styles.item_row}>
-          <View>
-            <Image style={styles.thumb} source={{uri: Utils.isEmpty(item.img_src)?null:item.img_src}}/>
+      <TouchableOpacity onPress={() => this._open_detail(item.index)} style={styles.item_container}>
+        <ImageBackground source={{uri: Utils.isEmpty(item.img_src)?null:item.img_src}} style={styles.imageContainer}>
+          <View
+            style={{
+              alignItems: "center",
+              backgroundColor: "transparent",
+            }}
+          >
+            <View style={[styles.text_cointainer]}>
+              <Text style={[styles.title_home, common_styles.bold, common_styles.float_center]}>{item.title}</Text>
+            </View>
           </View>
-          <View style={styles.text_label}>
-            <Text numberOfLines={3} style={common_styles.bold}>{item.title}</Text>
-          </View>
-        </View>
+        </ImageBackground>
       </TouchableOpacity>
 		);
     //get latest news
@@ -117,8 +121,8 @@ class Home extends Component {
       RequestData.sentGetRequest(featured_media_url,
         (detail, error) => {
           if (!(Utils.isEmpty(detail) || Utils.isEmpty(detail['media_details']) || Utils.isEmpty(detail['media_details']['sizes']) ||
-              Utils.isEmpty(detail['media_details']['sizes']['full']) || Utils.isEmpty(detail['media_details']['sizes']['full']['source_url']))){
-            var size_url = detail['media_details']['sizes']['full']['source_url'];
+              Utils.isEmpty(detail['media_details']['sizes']['contentslideshow']) || Utils.isEmpty(detail['media_details']['sizes']['contentslideshow']['source_url']))){
+            var size_url = detail['media_details']['sizes']['contentslideshow']['source_url'];
             this.state.data_list[item_index]['img_src'] = size_url;
             this.forceUpdate();
           }
@@ -159,10 +163,6 @@ class Home extends Component {
             <Text>Home</Text>
           </Body>
           <Right style={common_styles.headerRight}>
-            <Button
-              transparent onPress={this._open_subscribe}>
-              <Icon name="ios-mail-outline" style={styles.home_icon}/>
-            </Button>
             <Button
               transparent onPress={this._open_search}>
               <Icon name="search" style={styles.home_icon}/>

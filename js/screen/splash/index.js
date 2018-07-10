@@ -13,7 +13,7 @@ import Utils from "../../utils/functions";
 import {C_Const} from '../../utils/constant';
 import RNExitApp from 'react-native-exit-app';
 
-const launchscreenLogo = require("../../../img/logo.png");
+const launchscreenLogo = require("../../../img/logo.jpg");
 
 class Splash extends BaseScreen {
 	constructor(props) {
@@ -37,7 +37,9 @@ class Splash extends BaseScreen {
 					);
 				} else {
 					//online
-					this._navigateTo('Drawer');
+					setTimeout( () => {
+						this._navigateTo('Drawer');
+					}, C_Const.SPLASH_TIMER);
 				}
 			});
 		}
